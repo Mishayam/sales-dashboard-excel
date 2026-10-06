@@ -47,6 +47,3 @@ Synthetic data was created using:
 - Data validation and workbook protection
 - Synthetic data generation for testing/demo purposes
 
-## Next Steps
-
-- Apply the same workflow to a real-world, messy dataset (in progress — Kaggle dataset, 1.2M rows, using Python/pandas for cleaning before Excel/Power BI)
