@@ -1,49 +1,50 @@
-# Sales Dashboard (Excel)
+# Sales Dashboard — Excel
 
-A two-tab Excel workbook (`Sales_Dashboard.xlsx`) that generates synthetic sales data and summarizes it in an interactive dashboard with KPI cards, charts, and slicers.
+An interactive Excel sales dashboard built with a synthetic dataset. The workbook demonstrates spreadsheet-based data summarisation, KPI reporting, lookup formulas and interactive filtering.
 
-> **Note:** Source data was generated using `RANDBETWEEN` and related formulas to simulate realistic sales records (not real business data). See "Data Generation" below.
+> **Data note:** The sales records are synthetic and were generated for demonstration. They do not represent a real company or real customer transactions.
 
-## Structure
+## Preview
 
-- **Data** — raw sales records (Order ID, Date, Region, Product Category, Units Sold, Unit Price)
-- **Dashboard** — KPI cards, charts, and interactive slicers (Region / Product Category)
+![Excel sales dashboard](screenshot.png)
 
-## Functions Used
+[Open the Excel workbook](Sales_Dashboard.xlsx)
 
-**Math & Stats**
-- `SUM` — total revenue per region
-- `AVERAGE` — average order value
-- `COUNT` / `COUNTA` — total orders / active sales reps
-- `MAX` / `MIN` — highest and lowest single transaction
+## Workbook structure
 
-**Logical & Conditional**
-- `IF` — bonus flag for units sold over 50
-- `COUNTIF` / `COUNTIFS` — order counts by region
-- `SUMIF` / `SUMIFS` — revenue by region + product category
+- **Data:** simulated sales records including order ID, date, region, product category, units sold and unit price.
+- **Dashboard:** KPI cards, charts and slicers for exploring the data by region and product category.
 
-**Lookup & Reference**
-- `INDEX` / `MATCH` — highest revenue region lookup
-- `VLOOKUP` — pull Unit Price / Region from a typed Order ID
+## Analysis and Excel techniques
 
-## Data Generation
+| Area | Techniques used |
+|---|---|
+| Aggregation | `SUM`, `AVERAGE`, `COUNT`, `COUNTA`, `MAX`, `MIN` |
+| Conditional analysis | `IF`, `COUNTIF`, `COUNTIFS`, `SUMIF`, `SUMIFS` |
+| Lookups | `INDEX` + `MATCH`, `VLOOKUP` |
+| Interactivity | Pivot-table slicers, data validation and controlled input cells |
+| Data generation | `INDEX`, `RANDBETWEEN`, `DATE` and `TEXT` |
 
-Synthetic data was created using:
-- `INDEX` + `RANDBETWEEN` — random Region and Product Category values
-- `RANDBETWEEN(DATE(...), DATE(...))` — random order dates
-- `"ORD-" & TEXT(RANDBETWEEN(...), "0000")` — random alphanumeric Order IDs
+## Dashboard contents
 
-## Dashboard Features
+- KPI cards for highest-revenue region, maximum orders by region, maximum single transaction and average per order.
+- Regional revenue and order-count charts.
+- Category and regional comparisons for units sold and revenue.
+- Revenue share by region.
+- Slicers for region and product category.
 
-- KPI cards: Highest Revenue Region, Maximum Orders by Region, Maximum Single Order, Average per Order
-- Charts: Revenue by Region (bar), Number of Orders (bar), Units Sold & Revenue by Category/Region (clustered bar), Revenue Share by Region (pie)
-- Slicers for Region and Product Category
-- Data validation and restricted input ranges to prevent accidental edits to source formulas
+## What this project demonstrates
 
-## Skills Demonstrated
+- Building an interactive dashboard in Excel.
+- Using conditional aggregation and lookup formulas to answer business questions.
+- Organising a workbook into source-data and reporting layers.
+- Applying data validation and worksheet protection to reduce accidental changes.
 
-- Core Excel formulas (SUM, IF, COUNTIF, SUMIF, INDEX/MATCH, VLOOKUP)
-- Dashboard design: KPI cards, chart selection, slicers
-- Data validation and workbook protection
-- Synthetic data generation for testing/demo purposes
+## Limitations and next improvements
 
+This is a practice project using generated data, so its results should not be interpreted as real commercial findings. A useful next step would be to add a short written insight section explaining the most important patterns and the business actions a sales manager might consider.
+
+## Files
+
+- [Workbook](Sales_Dashboard.xlsx)
+- [Dashboard screenshot](screenshot.png)
